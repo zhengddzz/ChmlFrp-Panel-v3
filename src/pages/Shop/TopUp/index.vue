@@ -47,17 +47,16 @@
         <n-h3 prefix="bar">
             <n-text type="primary"> 支付方式 </n-text>
         </n-h3>
-        <n-card size="small" style="margin-bottom: 16px">
-            <div style="margin-bottom: 8px; display: flex; align-items: center;">
-                <n-checkbox v-model:checked="isAgreed" style="margin-right: 8px;"></n-checkbox>
-                <span>我已了解以下内容：</span>
-            </div>
+        <div style="margin-bottom: 16px; padding: 16px; border: 1px solid #e8e8e8; border-radius: 8px; background-color: #f9f9f9;">
+            <n-checkbox v-model:checked="isAgreed" style="margin-bottom: 8px">
+                我已了解：
+            </n-checkbox>
             <div style="margin-left: 24px; font-size: 14px; line-height: 1.5;">
                 <p>1. 充值后不支持退款，如有支付问题请联系客服QQ：242247494或加交流群联系</p>
                 <p>2. 充值可开具发票，充值金额只能用于ChmlFrp服务消费</p>
                 <p>3. 1元=1000积分，充值金额最低3元，最高9999元</p>
             </div>
-        </n-card>
+        </div>
         <n-grid cols="2 s:3 l:4 xl:5 2xl:6" :x-gap="12" :y-gap="12" responsive="screen">
             <n-grid-item>
                 <n-spin :show="loading.wxpay">
