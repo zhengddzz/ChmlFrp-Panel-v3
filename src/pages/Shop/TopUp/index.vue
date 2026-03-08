@@ -1,10 +1,5 @@
 <template>
     <n-back-top :right="100" />
-    <n-card size="small">
-        <n-alert title="提示" type="warning">
-            充值后不支持退款，如果无法支付或支付后未到账，请联系客服QQ：242247494开通临时支付渠道或进行补发。
-        </n-alert>
-    </n-card>
     <n-card style="margin-top: 16px">
         <n-h3 prefix="bar">
             <n-text type="primary"> 预设金额 </n-text>
@@ -54,12 +49,13 @@
         </n-h3>
         <n-card size="small" style="margin-bottom: 16px">
             <n-checkbox v-model:checked="isAgreed" style="margin-bottom: 8px">
-                我已了解：
+                我已了解以下内容：
             </n-checkbox>
             <div style="margin-left: 24px; font-size: 14px; line-height: 1.5; color: #666;">
-                <p>1. 充值后不支持退款，如果无法支付或支付后未到账，请联系客服QQ：242247494开通临时支付渠道或进行补发。</p>
-                <p>2. 充值未消费不可开票，充值金额只能用于ChmlFrp消费；充值限额说明</p>
-                <p>3. 最大支持360天（具体天数依赖各个银行）内原路提现，超过则提现至实名认证户名下。更多详情</p>
+                <p>1. 充值后不支持退款，如有支付问题请联系客服QQ：242247494</p>
+                <p>2. 充值未消费不可开票，充值金额只能用于ChmlFrp服务消费</p>
+                <p>3. 支持360天内原路提现，超过期限将提现至实名认证账户</p>
+                <p>4. 1元=1000积分，充值金额最低3元，最高9999元</p>
             </div>
         </n-card>
         <n-grid cols="2 s:3 l:4 xl:5 2xl:6" :x-gap="12" :y-gap="12" responsive="screen">
