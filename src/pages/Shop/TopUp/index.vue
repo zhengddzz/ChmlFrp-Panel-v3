@@ -47,14 +47,13 @@
         <n-h3 prefix="bar">
             <n-text type="primary"> 支付方式 </n-text>
         </n-h3>
-        <n-card size="small" style="margin-bottom: 16px">
-            <n-checkbox v-model:checked="isAgreed" style="margin-bottom: 8px">
-                我已了解以下内容：
-            </n-checkbox>
-            <div style="margin-left: 24px; font-size: 14px; line-height: 1.5; color: #666;">
-                <p>1. 充值后不支持退款，如有支付问题请联系客服QQ：242247494</p>
-                <p>2. 充值未消费不可开票，充值金额只能用于ChmlFrp服务消费</p>
-                <p>3. 支持360天内原路提现，超过期限将提现至实名认证账户</p>
+        <n-checkbox v-model:checked="isAgreed" style="margin-bottom: 8px">
+            我已了解：
+        </n-checkbox>
+        <n-card size="small" style="margin-bottom: 16px; margin-left: 24px;">
+            <div style="font-size: 14px; line-height: 1.5;">
+                <p>1. 充值后不支持退款，如有支付问题请联系客服QQ：242247494或加交流群联系</p>
+                <p>2. 充值可开具发票，充值金额只能用于ChmlFrp服务消费</p>
                 <p>4. 1元=1000积分，充值金额最低3元，最高9999元</p>
             </div>
         </n-card>
