@@ -67,12 +67,12 @@
                 <n-spin :show="loading.wxpay">
                     <n-tooltip trigger="hover">
                         <template #trigger>
-                            <n-card size="small" hoverable @click="pay('wxpay')" :disabled="!isAmountValid || !isAgreed || loading.wxpay">
+                            <n-card size="small" hoverable @click="pay('wxpay')" :disabled="!isAmountValid || !isAgreed || loading.wxpay" :style="{ opacity: (!isAmountValid || !isAgreed || loading.wxpay) ? 0.5 : 1 }">
                                 <n-space align="center">
-                                    <n-icon size="40" color="#07C160">
+                                    <n-icon size="40" :color="(!isAmountValid || !isAgreed || loading.wxpay) ? '#999' : '#07C160'">
                                         <LogoWechat />
                                     </n-icon>
-                                    <span style="font-size: 24px">微信支付</span>
+                                    <span style="font-size: 24px" :style="{ color: (!isAmountValid || !isAgreed || loading.wxpay) ? '#999' : '#333' }">微信支付</span>
                                 </n-space>
                             </n-card>
                         </template>
@@ -84,12 +84,12 @@
                 <n-spin :show="loading.alipay">
                     <n-tooltip trigger="hover">
                         <template #trigger>
-                            <n-card size="small" hoverable @click="pay('alipay')" :disabled="!isAmountValid || !isAgreed || loading.alipay">
+                            <n-card size="small" hoverable @click="pay('alipay')" :disabled="!isAmountValid || !isAgreed || loading.alipay" :style="{ opacity: (!isAmountValid || !isAgreed || loading.alipay) ? 0.5 : 1 }">
                                 <n-space align="center">
-                                    <n-icon size="40" color="#1677FF">
+                                    <n-icon size="40" :color="(!isAmountValid || !isAgreed || loading.alipay) ? '#999' : '#1677FF'">
                                         <LogoAlipay />
                                     </n-icon>
-                                    <span style="font-size: 24px">支付宝</span>
+                                    <span style="font-size: 24px" :style="{ color: (!isAmountValid || !isAgreed || loading.alipay) ? '#999' : '#333' }">支付宝</span>
                                 </n-space>
                             </n-card>
                         </template>
