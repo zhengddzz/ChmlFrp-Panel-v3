@@ -51,11 +51,11 @@
             <n-checkbox v-model:checked="isAgreed" style="margin-bottom: 8px">
                 我已了解：
             </n-checkbox>
-            <n-card size="small" style="margin-top: 8px;">
+            <n-card size="small" style="margin-top: 8px; padding: 12px;">
                 <div style="font-size: 14px; line-height: 1.5;">
-                    <p>1. 充值后不支持退款，如有支付问题请联系客服QQ：242247494或加交流群联系</p>
-                    <p>2. 充值可开具发票，充值金额只能用于ChmlFrp服务消费</p>
-                    <p>4. 1元=1000积分，充值金额最低3元，最高9999元</p>
+                    <p style="margin: 4px 0;">1. 充值后不支持退款，如有支付问题请联系客服QQ：242247494或加交流群联系</p>
+                    <p style="margin: 4px 0;">2. 充值可开具发票，充值金额只能用于ChmlFrp服务消费</p>
+                    <p style="margin: 4px 0;">4. 1元=1000积分，充值金额最低3元，最高9999元</p>
                 </div>
             </n-card>
         </div>
