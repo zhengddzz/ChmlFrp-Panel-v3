@@ -52,12 +52,22 @@
         <n-h3 prefix="bar">
             <n-text type="primary"> 支付方式 </n-text>
         </n-h3>
+        <div style="margin-bottom: 16px">
+            <n-checkbox v-model:checked="isAgreed" style="margin-bottom: 8px">
+                我已了解：
+            </n-checkbox>
+            <div style="margin-left: 24px; font-size: 14px; line-height: 1.5; color: #666;">
+                <p>1. 充值后不支持退款，如果无法支付或支付后未到账，请联系客服QQ：242247494开通临时支付渠道或进行补发。</p>
+                <p>2. 充值未消费不可开票，充值金额只能用于ChmlFrp消费；充值限额说明</p>
+                <p>3. 最大支持360天（具体天数依赖各个银行）内原路提现，超过则提现至实名认证户名下。更多详情</p>
+            </div>
+        </div>
         <n-grid cols="2 s:3 l:4 xl:5 2xl:6" :x-gap="12" :y-gap="12" responsive="screen">
             <n-grid-item>
                 <n-spin :show="loading.wxpay">
                     <n-tooltip trigger="hover">
                         <template #trigger>
-                            <n-card size="small" hoverable @click="pay('wxpay')" :disabled="!isAmountValid || loading.wxpay">
+                            <n-card size="small" hoverable @click="pay('wxpay')" :disabled="!isAmountValid || !isAgreed || loading.wxpay">
                                 <n-space align="center">
                                     <n-icon size="40" color="#07C160">
                                         <LogoWechat />
@@ -74,7 +84,7 @@
                 <n-spin :show="loading.alipay">
                     <n-tooltip trigger="hover">
                         <template #trigger>
-                            <n-card size="small" hoverable @click="pay('alipay')" :disabled="!isAmountValid || loading.alipay">
+                            <n-card size="small" hoverable @click="pay('alipay')" :disabled="!isAmountValid || !isAgreed || loading.alipay">
                                 <n-space align="center">
                                     <n-icon size="40" color="#1677FF">
                                         <LogoAlipay />
@@ -299,6 +309,7 @@ const presetAmounts = [
 
 const customAmount = ref('3');
 const selectedPresetAmount = ref<number | null>(null);
+const isAgreed = ref(false);
 
 // 计算积分
 const calculatedPoints = computed(() => {
@@ -365,6 +376,10 @@ const pay = async (ttype: 'wxpay' | 'alipay') => {
     }
     if (amount > 9999) {
         message.error('金额最大为9999元');
+        return;
+    }
+    if (!isAgreed.value) {
+        message.error('请勾选"我已了解"');
         return;
     }
 
