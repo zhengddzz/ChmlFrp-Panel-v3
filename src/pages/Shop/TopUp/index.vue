@@ -52,7 +52,7 @@
         <n-h3 prefix="bar">
             <n-text type="primary"> 支付方式 </n-text>
         </n-h3>
-        <div style="margin-bottom: 16px">
+        <n-card size="small" style="margin-bottom: 16px">
             <n-checkbox v-model:checked="isAgreed" style="margin-bottom: 8px">
                 我已了解：
             </n-checkbox>
@@ -61,7 +61,7 @@
                 <p>2. 充值未消费不可开票，充值金额只能用于ChmlFrp消费；充值限额说明</p>
                 <p>3. 最大支持360天（具体天数依赖各个银行）内原路提现，超过则提现至实名认证户名下。更多详情</p>
             </div>
-        </div>
+        </n-card>
         <n-grid cols="2 s:3 l:4 xl:5 2xl:6" :x-gap="12" :y-gap="12" responsive="screen">
             <n-grid-item>
                 <n-spin :show="loading.wxpay">
